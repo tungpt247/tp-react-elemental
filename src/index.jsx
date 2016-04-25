@@ -1,5 +1,13 @@
-export Alert      from './components/Alert'
-export Pagination from './components/Pagination'
-export Progress   from './components/Progress'
-export Card       from './components/Card'
-export Vital      from './components/Vital'
+import Alert      from './components/Alert'
+import Pagination from './components/Pagination'
+import Progress   from './components/Progress'
+import Card       from './components/Card'
+import Vital      from './components/Vital'
+
+module.exports = {
+  Alert,
+  Pagination,
+  Progress,
+  Card,
+  Vital
+}
