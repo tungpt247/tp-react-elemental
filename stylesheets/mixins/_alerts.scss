@@ -1,0 +1,18 @@
+//
+// Alerts
+// =============================
+
+@mixin alert-variant($color) {
+  background-color: tint($color, 90%);
+  border-color: tint($color, 85%);
+  color: $color;
+
+  a {
+    color: darken($color, 10%);
+
+    &:focus,
+    &:hover {
+      color: darken($color, 90%);
+    }
+  }
+}
