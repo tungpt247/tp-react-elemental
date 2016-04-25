@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const appName = 'elemental'
 const outputFile = appName + '.js'
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const PATH = {
   source: path.join(__dirname, 'src'),
@@ -16,10 +17,20 @@ const config = {
     path: PATH.dist,
     filename: outputFile,
     library: [appName],
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
+    externals: {
+      'react': 'react',
+      'react-dom': 'react-dom'
+    }
   },
   module: {
     loaders: [{
+      test: /\.css$/,
+      loader: ExtractTextPlugin.extract('style', 'css')
+    }, {
+      test: /\.scss$/,
+      loader: ExtractTextPlugin.extract('style', 'css!sass')
+    }, {
       test: /\.scss$/,
       include: __dirname,
       loaders: [
@@ -60,6 +71,7 @@ const config = {
     extensions: ['', '.js', '.jsx']
   },
   plugins: [
+    new ExtractTextPlugin('styles.css'),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
