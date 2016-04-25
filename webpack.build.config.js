@@ -11,7 +11,7 @@ const PATH = {
 
 const config = {
   entry: PATH.entry,
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
   output: {
     path: PATH.dist,
     filename: outputFile,
@@ -20,6 +20,14 @@ const config = {
   },
   module: {
     loaders: [{
+      test: /\.scss$/,
+      include: __dirname,
+      loaders: [
+        'style',
+        'css',
+        'sass'
+      ]
+    }, {
       test: /(\.jsx|\.js)$/,
       loader: 'babel',
       exclude: /node_modules/,
