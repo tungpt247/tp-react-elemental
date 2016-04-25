@@ -11,7 +11,7 @@ const PATH = {
 
 const config = {
   entry: PATH.entry,
-  devtool: 'source-map',
+  devtool: 'eval-source-map',
   output: {
     path: PATH.dist,
     filename: outputFile,
