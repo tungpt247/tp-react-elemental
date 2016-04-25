@@ -1,0 +1,59 @@
+$box-shadow-color: rgba(0, 0, 0, .1);
+$white-color: #fff;
+
+.Vital {
+  backface-visibility: hidden;
+  background: $blue;
+  border-radius: 5px;
+  box-shadow: 0 0 5px $box-shadow-color;
+  display: flex;
+  height: 400px;
+  margin: auto;
+  padding: 30px;
+
+  position: relative;
+  // pointer-events: none;
+  transform: translateZ(0);
+  transform-style: preserve-3d;
+  transition: all 300ms linear;
+  width: 400px;
+
+  &:after {
+    bottom:-10px;
+    border-radius: 50%;
+    box-shadow: 0 30px 20px $box-shadow-color;
+    content:" ";
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    left:0;
+
+  }
+
+  &__content {
+    margin: auto;
+    text-align:center;
+    transform-style: preserve-3d;
+    perspective: 400px;
+    perspective-origin: 50% 50%;
+  }
+
+  h1 {
+    transform: translateZ(100px);
+  }
+
+  p {
+    transform: translateZ(50px);
+    display: block;
+
+    &.related {
+      transform: translateZ(80px);
+      font-style: italic;
+    }
+  }
+
+  a {
+    color:#69c6b8;
+    pointer-events: auto;
+  }
+}

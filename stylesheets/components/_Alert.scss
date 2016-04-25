@@ -1,0 +1,52 @@
+//
+// Alerts
+// --------------------------------------------------
+
+.Alert {
+  @include padding(.75em 1em);
+  border: 1px solid transparent;
+  border-radius: $base-border-radius;
+  margin-bottom: 1em;
+
+  h4 {
+    color: inherit;
+    margin-top: 0;
+  }
+
+  > p,
+  > ul {
+    margin-bottom: 0;
+  }
+
+  > p + p {
+    margin-top: 5px;
+  }
+
+  &__close {
+    color: inherit;
+    position: relative;
+    right: -21px;
+    top: -2px;
+  }
+
+  &--danger,
+  &--error {
+    @include alert-variant($error-color);
+  }
+
+  &--info {
+    @include alert-variant($info-color);
+  }
+
+  &--warning {
+    @include alert-variant($warning-color);
+  }
+
+  &--success {
+    @include alert-variant($success-color);
+  }
+
+  &--primary {
+    @include alert-variant($primary-color);
+  }
+}
