@@ -25,12 +25,6 @@ const config = {
   },
   module: {
     loaders: [{
-      test: /\.css$/,
-      loader: ExtractTextPlugin.extract('style', 'css')
-    }, {
-      test: /\.scss$/,
-      loader: ExtractTextPlugin.extract('style', 'css!sass')
-    }, {
       test: /\.scss$/,
       include: __dirname,
       loaders: [

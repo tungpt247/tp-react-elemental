@@ -1,3 +1,5 @@
+import '../stylesheets/index.scss'
+
 import Alert      from './components/Alert'
 import Pagination from './components/Pagination'
 import Progress   from './components/Progress'
