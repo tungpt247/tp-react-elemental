@@ -6,12 +6,12 @@ const outputFile = appName + '.js'
 const PATH = {
   source: path.join(__dirname, 'src'),
   dist: path.join(__dirname, 'dist'),
-  entry: path.join(__dirname, 'src', 'index.jsx')
+  entry: path.join(__dirname, 'src', 'index.js')
 }
 
 const config = {
   entry: PATH.entry,
-  devtool: 'eval-source-map',
+  devtool: 'source-map',
   output: {
     path: PATH.dist,
     filename: outputFile,
