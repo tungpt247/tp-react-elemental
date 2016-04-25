@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import {Vital} from '../../src/components/vital'
+import Vital from '../../src/components/vital'
 
-export class VitalDemo extends Component {
+class VitalDemo extends Component {
 
   render() {
     return (
@@ -12,3 +12,5 @@ export class VitalDemo extends Component {
   }
 
 }
+
+module.exports = VitalDemo

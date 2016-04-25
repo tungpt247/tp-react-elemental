@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { findDOMNode } from 'react-dom'
 
-export class Card extends Component {
+class Card extends Component {
 
   constructor() {
     super(...arguments)
@@ -92,3 +92,5 @@ export class Card extends Component {
   }
 
 }
+
+module.exports = Card

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export class Vital extends Component {
+class Vital extends Component {
 
   constructor() {
     super(...arguments)
@@ -79,3 +79,5 @@ export class Vital extends Component {
   }
 
 }
+
+module.exports = Vital

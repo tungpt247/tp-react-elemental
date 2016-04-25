@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import {Slider} from '../../src/components/Slider'
+import Slider from '../../src/components/Slider'
 
-export class SliderDemo extends Component {
+class SliderDemo extends Component {
   constructor(props, context) {
     super(props, context)
     this.state = {
@@ -36,3 +36,5 @@ export class SliderDemo extends Component {
   }
 
 }
+
+module.exports = SliderDemo

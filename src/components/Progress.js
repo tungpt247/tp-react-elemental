@@ -5,7 +5,7 @@ const PROGRESS_TYPES = [
   'circle'
   ]
 
-export class Progress extends Component {
+class Progress extends Component {
 
   componentDidMount() {
     this.renderContent()
@@ -39,3 +39,5 @@ export class Progress extends Component {
     )
   }
 }
+
+module.exports = Progress

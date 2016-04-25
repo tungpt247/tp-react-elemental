@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import {Card} from '../../src/components/Card'
+import Card from '../../src/components/Card'
 
-export class CardDemo extends Component {
+class CardDemo extends Component {
 
   render() {
     return (
@@ -13,3 +13,4 @@ export class CardDemo extends Component {
   }
 
 }
+module.exports = CardDemo

@@ -28,7 +28,7 @@ const ORIENTATION_TYPES = {
   }
 }
 
-export class Slider extends Component {
+class Slider extends Component {
 
   constructor(props) {
     super(props)
@@ -189,3 +189,5 @@ export class Slider extends Component {
     )
   }
 }
+
+module.exports = Slider

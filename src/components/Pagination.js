@@ -124,4 +124,4 @@ class Pagination extends Component {
   }
 }
 
-export default Pagination
+module.exports = Pagination

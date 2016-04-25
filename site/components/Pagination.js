@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Pagination from '../../src/components/Pagination'
 
-export class PaginationDemo extends Component {
+class PaginationDemo extends Component {
 
   constructor() {
     super(...arguments)
@@ -40,3 +40,5 @@ export class PaginationDemo extends Component {
     )
   }
 }
+
+module.exports = PaginationDemo

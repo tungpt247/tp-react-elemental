@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import {Alert} from '../../src/components/Alert'
+import Alert from '../../src/components/Alert'
 
-export class AlertDemo extends Component {
+class AlertDemo extends Component {
 
   render() {
     return(
@@ -15,3 +15,4 @@ export class AlertDemo extends Component {
   }
 
 }
+module.exports = AlertDemo

@@ -10,7 +10,7 @@ const ALERT_TYPES = [
   'warning'
   ]
 
-export class Alert extends Component {
+class Alert extends Component {
   static PropTypes = {
     type: PropTypes.oneOf(ALERT_TYPES).isRequired
   }
@@ -21,3 +21,5 @@ export class Alert extends Component {
     return (<div className={componentClass}>{this.props.children}</div>)
   }
 }
+
+module.exports = Alert
