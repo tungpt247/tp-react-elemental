@@ -1,6 +1,6 @@
 {
   "name": "tp-react-elemental",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React Elemental",
   "main": "dist/elemental.js",
   "scripts": {
