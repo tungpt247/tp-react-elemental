@@ -1,0 +1,63 @@
+$slider-background-color: #e5e5e5;
+$slider-box-shadow: rgba(0, 0, 0, .3);
+$slider-border-color: #ccc;
+$slider-handle-fill-background-color: #1ecd97;
+
+.Slider {
+  background: $slider-background-color;
+  margin: 20px 0;
+  position: relative;
+
+  &__fill,
+  &__handle {
+    background: $slider-handle-fill-background-color;
+    border-radius: 20px;
+    position: absolute;
+  }
+
+  &__handle {
+    background: darken($slider-handle-fill-background-color, 5);
+    cursor: pointer;
+    display: inline-block;
+
+    &:active {
+      background: darken($slider-handle-fill-background-color, 10);
+    }
+  }
+
+  &-horizontal,
+  &-vertical {
+    border-radius: 20px;
+  }
+
+  &-horizontal {
+    height: 20px;
+
+    .Slider__fill {
+      height: 100%;
+    }
+
+    .Slider__handle {
+      height: 40px;
+      top: -10px;
+      width: 40px;
+    }
+  }
+
+  &-vertical {
+    height: 150px;
+    margin: 20px auto;
+    max-width: 10px;
+
+    .Slider__fill {
+      bottom: 0;
+      width: 100%;
+    }
+
+    .Slider__handle {
+      height: 10px;
+      left: -10px;
+      width: 30px;
+    }
+  }
+}
