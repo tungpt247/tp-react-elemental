@@ -8,13 +8,13 @@ Currently under development.
 
 ##Installation
 ```
-npm install -S tp-react-component
+npm install -S tp-react-elemental
 ```
 
 Import the components you need, example:
 
 ```
-import {Alert} from 'tp-react-component'
+import {Alert} from 'tp-react-elemental'
 ```
 
 ##About the project
