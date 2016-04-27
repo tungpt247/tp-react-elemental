@@ -1,0 +1,121 @@
+$gray: #666;
+$gray-light: #999;
+$gray-lighter: #eee;
+
+$dropdown-bg: #ff0;
+$zindex-dropdown: 100;
+$zindex-dropdown-button: $zindex-dropdown + 1;
+$zindex-dropdown-backdrop: $zindex-dropdown - 1;
+$zindex-modal: 110;
+$zindex-modal-backdrop: $zindex-modal - 1;
+
+$dropdown-link-disabled-color: $gray-light;
+$dropdown-header-color: $gray-light;
+$dropdown-menu-height: 360px;
+$border-radius-base: 1px;
+$dropdown-link-color: #f00;
+$line-height-base: 1.6;
+$dropdown-link-hover-bg: #f00;
+$dropdown-link-hover-color: #f00;
+$dropdown-link-active-bg: #f00;
+$dropdown-link-active-color: #f00;
+$dropdown-divider-bg: #f00;
+
+.Dropdown {
+  display: inline-block;
+  position: relative;
+
+  &-menu {
+    animation-duration: 100;
+    animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+    background-color: $dropdown-bg;
+    border-radius: $border-radius-base;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.175), 0 3px 8px rgba(0,0,0,.175);
+    left: 0;
+    list-style: none;
+    margin: 4px 0 0; // override default ul
+    min-width: 160px;
+    padding: 5px 0;
+    position: absolute;
+    text-align: left; // ensures proper alignment if parent has alternative alignment
+    top: 100%;
+    z-index: $zindex-dropdown;
+
+    // fix height and scroll
+    max-height: $dropdown-menu-height;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+
+    .align-right & {
+      left: auto;
+      right: 0;
+    }
+
+    &__header,
+    &__item {
+      white-space: nowrap;
+    }
+
+    &__action {
+      clear: both;
+      color: $dropdown-link-color;
+      cursor: pointer;
+      display: block;
+      font-weight: normal;
+      line-height: $line-height-base;
+      padding: 3px 20px;
+      &:focus,
+      &:hover {
+        background-color: $dropdown-link-hover-bg;
+        color: $dropdown-link-hover-color;
+        text-decoration: none;
+      }
+
+      // active state
+      &.active {
+        &,
+        &:focus,
+        &:hover {
+          background-color: $dropdown-link-active-bg;
+          color: $dropdown-link-active-color;
+          outline: 0;
+          text-decoration: none;
+        }
+      }
+
+      &__divider {
+        background-color: $dropdown-divider-bg;
+        height: 1px;
+        margin-bottom: 0.25em;
+        margin-top: 0.25em;
+        overflow: hidden;
+      }
+
+      &__header {
+        color: $dropdown-header-color;
+        display: block;
+        font-weight: 500;
+        line-height: $line-height-base;
+        margin-top: 1em;
+        padding: 3px 20px;
+        white-space: nowrap;
+
+        // margin looks clumsy when preceeded by a divider
+        .Dropdown-menu__divider + & {
+          margin-top: 0;
+        }
+      }
+
+      &-backdrop {
+        height: 100%;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: $zindex-dropdown-backdrop;
+      }
+
+    }
+
+  }
+}

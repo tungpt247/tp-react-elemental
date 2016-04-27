@@ -58,7 +58,7 @@ const common = {
 
 if (TARGET === 'start' || !TARGET) {
   module.exports = merge(common, {
-    devtool: 'eval-source-map',
+    devtool: 'source-map',
     devServer: {
       contentBase: PATHS.build,
 

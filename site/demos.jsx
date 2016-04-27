@@ -4,7 +4,7 @@ import {PaginationDemo} from './components/Pagination'
 import {ProgressDemo} from './components/Progress'
 import {SliderDemo} from './components/Slider'
 import {CardDemo} from './components/Card'
-import {VitalDemo} from './components/Vital'
+import {DropdownDemo} from './components/Dropdown'
 
 export class AppDemo extends Component {
 
@@ -16,7 +16,7 @@ export class AppDemo extends Component {
       <ProgressDemo />
       <SliderDemo />
       <CardDemo />*/}
-      <VitalDemo />
+      <DropdownDemo />
       </div>
     )
   }
