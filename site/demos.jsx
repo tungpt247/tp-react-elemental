@@ -5,6 +5,7 @@ import {ProgressDemo} from './components/Progress'
 import {SliderDemo} from './components/Slider'
 import {CardDemo} from './components/Card'
 import {DropdownDemo} from './components/Dropdown'
+import {ButtonGroupDemo} from './components/ButtonGroup'
 
 export class AppDemo extends Component {
 
@@ -15,8 +16,9 @@ export class AppDemo extends Component {
       <PaginationDemo />
       <ProgressDemo />
       <SliderDemo />
-      <CardDemo />*/}
-      <DropdownDemo />
+      <CardDemo />
+      <DropdownDemo />*/}
+      <ButtonGroupDemo />
       </div>
     )
   }

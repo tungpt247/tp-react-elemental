@@ -1,25 +1,22 @@
 import React, { Component } from 'react'
-import {Dropdown} from '../../src/components/Dropdown'
+import {Dropdown}           from '../../src/components/Dropdown'
 
 const DROPDOWN_OPTIONS = [
 	{ label: 'Action' },
-	{ label: 'Another action' },
-	{ label: 'Something else here' },
-	{ type: 'divider' },
-	{ type: 'header', label: 'Dropdown header' },
-	{ label: 'Separated link' }
-];
+	{ label: 'Another action' }
+]
 
 export class DropdownDemo extends Component {
+	constructor(props) {
+		super(props)
+	}
+
   onSelect(item) {
-    console.log('xxx', item)
+    console.log('Selected item:', item)
   }
+
   render() {
-    return(
-       <div>
-        <Dropdown items={DROPDOWN_OPTIONS} buttonLabel="Default Trigger" onSelect={this.onSelect}/>
-      </div>
-    )
+    return(<Dropdown items={DROPDOWN_OPTIONS} buttonLabel="Default Trigger" onSelect={this.onSelect.bind(this)} />)
   }
 
 }

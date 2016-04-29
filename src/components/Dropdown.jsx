@@ -7,9 +7,14 @@ const ESC_KEYCODE = 27
 const NO_OP = () => undefined
 
 export class Dropdown extends Component {
-  static PropTypes = {
+
+  static propTypes = {
     items: PropTypes.array,
     onSelect: PropTypes.func
+  }
+
+  static defaultProps = {
+    onSelect: NO_OP
   }
 
   constructor(props) {
@@ -21,6 +26,7 @@ export class Dropdown extends Component {
 
     this.closeDropdown = this.closeDropdown.bind(this)
     this.openDropdown = this.openDropdown.bind(this)
+    this.renderButton = this.renderButton.bind(this)
   }
 
   openDropdown() {
@@ -59,15 +65,13 @@ export class Dropdown extends Component {
 
   renderButton() {
     var disclosureArrow = <span className='disclosure-arrow' />
-    return (
-      <Button
+    return (<Button
         className="Dropdown-toggle"
-        type={this.props.buttonType}
+        type="default"
         onClick={this.state.isOpen ? this.closeDropdown : this.openDropdown}>
         {this.props.buttonLabel}
         {disclosureArrow}
-      </Button>
-    )
+      </Button>)
   }
 
   renderDropdownMenu() {
@@ -98,6 +102,8 @@ export class Dropdown extends Component {
     )
   }
 
+  renderChildren() {}
+
   render() {
     var dropdownClass = classNames('Dropdown', {
       'is-open': this.state.isOpen
@@ -105,11 +111,13 @@ export class Dropdown extends Component {
 
     var props = blacklist(this.props, 'buttonLabel', 'buttonType', 'className', 'isOpen', 'items')
 
+    console.log('-------------', props)
     return (
       <span className={dropdownClass} {...props}>
         {this.renderButton()}
         {this.renderDropdownMenu()}
       </span>
     )
+
   }
 }

@@ -1,39 +1,45 @@
-import React, { createElement, createClass, Component, PropTypes } from 'react'
-import classNames from 'classnames'
+import React, { cloneElement, Component, PropTypes } from 'react'
+import {Tag} from 'react-dom'
+import classnames from 'classnames'
 import blacklist from 'blacklist'
 
-const BUTTON_SIZE = ['lg', 'sm', 'xs']
-const BUTTON_TYPES = [
-  'default'
-]
+const  defaultProps = {
+  type: 'default',
+  tag: 'button'
+}
 
 class Button extends Component {
 
+  constructor(props) {
+    super(props)
+    console.log('---------------::', this.props)
+  }
+
   render() {
-    var componentClass = classNames(
-      'Button',
-      'Button--' + this.props.type,
-      (this.props.size ? 'Button--' + this.props.size : null),
-      {
-        'Button-block': this.props.block,
-        'is-active': this.props.isActive
-      },
-      this.props.className
-    )
+    let {tag: Tag} = this.props
 
-    // props
-    var props = blacklist(this.props, 'type', 'size', 'component', 'className')
-    props.className = componentClass
+      var componentClass = classnames(
+        'Button',
+        'Button--' + this.props.type,
+        (this.props.size ? 'Button--' + this.props.size : null),
+        {
+          'Button-block': this.props.block,
+          'is-active': this.props.isActive
+        },
+        this.props.className
+      )
 
-    var tag = 'button'
-    props.type = this.props.submit ? 'submit' : 'button'
+      var props = blacklist(this.props, 'type', 'size', 'component', 'className')
 
-    return createElement(tag, props, this.props.children)
+      props.className = componentClass
+
+      Tag = 'button'
+      props.type = this.props.submit ? 'submit' : 'button'
+
+    return (<Tag {...props} className={componentClass} />)
   }
 }
 
-Button.defaultProps = {
-  type: 'default'
-}
+Button.defaultProps = defaultProps
 
 export default Button
